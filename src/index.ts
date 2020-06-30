@@ -12,12 +12,12 @@ async function createZip(command: string) {
   const zip = new JSZip();
   const App = zip.folder("Foam Opener.app")
   const Contents = App.folder("Contents");
-  const [ApplicationStub, DocumentWflow, InfoPlist] = await Promise.all([
+  const [ApplicationStub, DocumentWflowTemplate, InfoPlist] = await Promise.all([
     fetch(ApplicationStubURL).then(r => r.blob()),
     fetch(DocumentWflowURL).then(r => r.text()),
     fetch(InfoPlistURL).then(r => r.text()),
   ])
-  console.log(ApplicationStub)
+  const DocumentWflow = DocumentWflowTemplate.replace("__PUT_COMMAND_STRING_HERE__", command);
   Contents.file("MacOS/Application Stub", ApplicationStub, { unixPermissions: "0751", binary: true, optimizedBinaryString: true });
   Contents.file("document.wflow", DocumentWflow)
   Contents.file("Info.plist", InfoPlist)
@@ -30,6 +30,6 @@ async function downloadZip(zip: JSZip, filename: string) {
 }
 
 async function onDownload() {
-  const zip = await createZip("/dev")
+  const zip = await createZip("open https://simonknott.de")
   await downloadZip(zip, "Foam Opener.zip");
 }
