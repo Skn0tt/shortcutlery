@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./styles.scss">
 </head>
+
 <body>
-  <button id="download">Download</button>
+  <header>
+    <nav>
+      <h1>shortcutlery</h1>
+      <span>
+        <a href="#">about</a>
+        <a href="#"><img src="./github_icon.svg" width="24px" /></a>
+      </span>
+    </nav>
+  </header>
+  <main>
+    <p id="hero">
+      Easily add shortcuts to spotlight.
+      Open websites and run terminal commands at the tip of your fingers.
+    </p>
+
+    <div id="spotlight">
+      <img id="magnifiers" src="./search_magnifiers.svg" />
+      <input id="name_input" type="text" placeholder="Type in your shortcut's name" />
+    </div>
+  </main>
+  <footer>
+    <a href="#">Imprint</a>
+  </footer>
 
   <script src="./index.ts"></script>
 </body>
+
 </html>
