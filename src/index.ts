@@ -1,9 +1,18 @@
 import { saveAs } from "file-saver";
 import { createApp } from "./AppBuilder";
 
-const downloadButton = document.getElementById("download") as HTMLButtonElement;
+const nameInput = document.getElementById("name_input") as HTMLInputElement;
+console.log(nameInput)
+const spotlightDiv = document.getElementById("spotlight") as HTMLDivElement;
 
-downloadButton.onclick = onDownload;
+nameInput.onkeyup = () => {
+  const currentName = nameInput.value;
+  if (!!currentName) {
+    spotlightDiv.classList.remove("small")
+  } else {
+    spotlightDiv.classList.add("small")
+  }
+}
 
 async function onDownload() {
   const command = "open https://simonknott.de";

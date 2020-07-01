@@ -37,7 +37,13 @@ nav {
       margin-left: 24px;
     }
   }
+}
 
+.small {
+  #icon_upload,
+  #result_view {
+    display: none !important;
+  }
 }
 
 main {
@@ -45,7 +51,7 @@ main {
   width: 90vw;
 
   display: flex;
-  align-items: center; 
+  align-items: center;
   flex-direction: column;
 
   #hero {
@@ -54,45 +60,149 @@ main {
   }
 
   #spotlight {
-    margin: 48px;
-    min-width: 300px;
+    margin: 24px;
+    width: 600px;
     max-width: 80vw;
 
-    background: #EAEAEA;
+    background: #eaeaea;
     border: 1px solid rgba(#878787, 0.3);
     box-sizing: border-box;
     box-shadow: 0px 12px 50px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    #searchbar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
-    #magnifiers {
-      height: 48px;
-      padding-left: 10px;
-      padding: 8px;
+      #magnifiers {
+        height: 48px;
+        padding-left: 10px;
+        padding: 8px;
+      }
+
+      #name_input {
+        background: unset;
+        border: unset;
+        font-weight: 300;
+        font-size: 32px;
+        width: 100%;
+        outline: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #name_input::-webkit-input-placeholder {
+        color: rgba(#878787, 0.3);
+      }
+
+      #icon_upload {
+        margin-left: auto;
+        height: 42px;
+        margin-right: 12px;
+        margin-bottom: 4px;
+      }
+
+      #icon_upload:hover {
+        filter: blur(1px);
+        transition: filter 0.05s ease-in-out;
+      }
     }
 
-    #name_input {
-      background: unset;
-      border: unset;
-      font-weight: 300;
-      font-size: 38px;
-      margin-right: 24px;
-      outline: none;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+    #result_view {
+      border-top: solid 1px rgba(#878787, 0.3);
 
-    #name_input::-webkit-input-placeholder {
-      color: rgba(#878787, 0.3);
-    }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
 
+      #master {
+        border-right: solid 1px rgba(#878787, 0.3);
+
+        .section_header {
+          font-size: 14px;
+          padding: 2px;
+          padding-left: 18px;
+          background: #c4c4c4;
+          color: rgba(0, 0, 0, 0.5);
+        }
+
+        .item {
+          width: 100%;
+          
+          font-size: 14px;
+          padding: 10px;
+          padding-left: 18px;
+          color: rgba(0, 0, 0, 0.5);
+
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
+          img {
+            height: 10px;
+            margin-right: 14px;
+          }
+        }
+      }
+
+      #detail {
+        width: 65%;
+
+        padding: 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background: transparent;
+          background-image: url('data:image/svg+xml;utf8,<svg width="20" height="15" viewBox="0 0 60 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M29.6868 33.9824C30.1751 33.9824 30.5169 33.6895 30.9075 33.3477L58.8372 2.39062C59.0325 2.14652 59.2278 1.95123 59.2278 1.60943C59.2278 0.974628 58.6907 0.486328 58.1048 0.486328C57.8118 0.486328 57.47 0.535227 57.2259 0.779327L29.7356 31.1992L2.09886 0.779327C1.95236 0.535227 1.61056 0.486328 1.31766 0.486328C0.682859 0.486328 0.19458 0.974628 0.19458 1.60943C0.19458 1.95123 0.3899 2.19533 0.63406 2.43953L28.5149 33.3477C28.9056 33.7383 29.1985 33.9824 29.6868 33.9824Z" fill="black"/></svg>');
+          background-repeat: no-repeat;
+          background-position-x: 97%;
+          background-position-y: 60%;
+
+          border: 1px solid rgba(0, 0, 0, 0.25);
+          border-radius: 10px;
+          padding: 8px;
+
+          font-weight: 300;
+          font-size: 18px;
+          width: 100%;
+          outline: unset;
+        }
+
+        input {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+
+          background: unset;
+          border: 1px solid rgba(0, 0, 0, 0.25);
+          border-radius: 10px;
+          padding: 8px;
+
+          font-weight: 300;
+          font-size: 18px;
+          width: 95.6%;
+          outline: unset;
+        }
+
+        #create_app {
+          background: #00b912;
+          font-size: 18px;
+          padding: 3px 8px;
+          color: white;
+          border: 1.5px solid rgba(0, 0, 0, 0.25);
+          border-radius: 10px;
+        }
+      }
+    }
   }
 }
-
-
 
 footer {
   position: fixed;
