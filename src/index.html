@@ -43,13 +43,13 @@
           <div class="section_header">
             Specifics
           </div>
-          <div class="item">
-            <img src="./command.svg"/>
-            which command?
+          <div id="specifics" class="item">
+            <img id="specifics-icon" src="./link_icon.svg"/>
+            which website?
           </div>
         </div>
         <div id="detail">
-          <select class="ios_input" style="margin-top: 14px;">
+          <select id="action_select" class="ios_input" style="margin-top: 14px;">
             <option value="url" selected>
               open website
             </option>
@@ -60,7 +60,7 @@
 
           </select>
 
-          <input class="ios_input" style="margin-top: 14px;" placeholder="/usr/bin/code ~/dev/" />
+          <input id="action_input" class="ios_input" style="margin-top: 14px;" placeholder="https://simonknott.de" />
 
           <button id="create_app" style="margin-top: 14px;">
             Create app
