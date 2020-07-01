@@ -7,6 +7,7 @@ const actionSelect = document.getElementById("action_select") as HTMLSelectEleme
 const specifics = document.getElementById("specifics") as HTMLDivElement;
 const specificsIcon = document.getElementById("specifics-icon") as HTMLImageElement;
 const actionInput = document.getElementById("action_input") as HTMLInputElement;
+const createAppButton = document.getElementById("create_app") as HTMLButtonElement;
 
 function getSelectedAction() {
   return actionSelect.value as "url" | "shell";
@@ -25,12 +26,25 @@ const nameInput = document.getElementById("name_input") as HTMLInputElement;
 const spotlightDiv = document.getElementById("spotlight") as HTMLDivElement;
 
 nameInput.onkeyup = () => {
+  updateCreateButtonAvailability();
+
   const currentName = nameInput.value;
   if (!!currentName) {
     spotlightDiv.classList.remove("small")
   } else {
     spotlightDiv.classList.add("small")
   }
+}
+
+actionInput.oninput = () => {
+  updateCreateButtonAvailability();
+}
+
+function updateCreateButtonAvailability() {
+  const actionIsFilledOut = !!actionInput.value;
+  const nameIsFilledOut = !!nameInput.value;
+  const shallBeEnabled = actionIsFilledOut && nameIsFilledOut;
+  createAppButton.disabled = !shallBeEnabled;
 }
 
 async function onDownload() {

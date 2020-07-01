@@ -198,6 +198,20 @@ main {
           color: white;
           border: 1.5px solid rgba(0, 0, 0, 0.25);
           border-radius: 10px;
+
+          cursor: pointer;
+
+          transition: background, color 0.5s ease-out;
+        }
+
+        #create_app:hover {
+          background: darken(#00b912, 5);
+        }
+
+        #create_app:disabled {
+          cursor: unset;
+          background: none;
+          color: rgba(0, 0, 0, 0.25);
         }
       }
     }
