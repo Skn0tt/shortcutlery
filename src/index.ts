@@ -47,9 +47,16 @@ function updateCreateButtonAvailability() {
   createAppButton.disabled = !shallBeEnabled;
 }
 
-async function onDownload() {
-  const command = "open https://simonknott.de";
-  const appName = "App Shortcut";
-  const blob = await createApp(command, appName);
-  saveAs(blob, appName + ".zip");
+createAppButton.onclick = async () => {
+  if (createAppButton.disabled) {
+    return;
+  }
+
+  const name = nameInput.value;
+  const type = getSelectedAction();
+  const action = actionInput.value;
+  const command = type === "shell" ? action : `open ${action}`;
+
+  const blob = await createApp(command, name);
+  saveAs(blob, name + ".zip");
 }
