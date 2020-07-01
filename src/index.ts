@@ -55,7 +55,7 @@ createAppButton.onclick = async () => {
   const name = nameInput.value;
   const type = getSelectedAction();
   const action = actionInput.value;
-  const command = type === "shell" ? action : `open ${action}`;
+  const command = type === "shell" ? action : `open "${action}"`;
 
   const blob = await createApp(command, name);
   saveAs(blob, name + ".zip");
