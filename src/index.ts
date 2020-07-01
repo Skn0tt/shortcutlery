@@ -47,6 +47,9 @@ function updateCreateButtonAvailability() {
   createAppButton.disabled = !shallBeEnabled;
 }
 
+const notification1 = document.getElementById("notification-1");
+const notification2 = document.getElementById("notification-2");
+
 createAppButton.onclick = async () => {
   if (createAppButton.disabled) {
     return;
@@ -59,4 +62,9 @@ createAppButton.onclick = async () => {
 
   const blob = await createApp(command, name);
   saveAs(blob, name + ".zip");
+
+  notification1.classList.remove("move-right");
+  setTimeout(() => {
+    notification2.classList.remove("move-right");
+  }, 100)
 }
