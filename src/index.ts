@@ -8,6 +8,18 @@ const specifics = document.getElementById("specifics") as HTMLDivElement;
 const specificsIcon = document.getElementById("specifics-icon") as HTMLImageElement;
 const actionInput = document.getElementById("action_input") as HTMLInputElement;
 const createAppButton = document.getElementById("create_app") as HTMLButtonElement;
+const iconUpload = document.getElementById("icon_upload") as HTMLImageElement;
+const iconUploadInput = document.getElementById("icon_upload_input") as HTMLInputElement;
+
+iconUpload.onclick = () => {
+  iconUploadInput.click();
+}
+
+iconUploadInput.onchange = () => {
+  const [ image ] = iconUploadInput.files;
+  const objectUrl = URL.createObjectURL(image);
+  iconUpload.src = objectUrl;
+}
 
 function getSelectedAction() {
   return actionSelect.value as "url" | "shell";
