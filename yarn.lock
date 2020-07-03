@@ -838,6 +838,19 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@fiahfy/icns@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@fiahfy/icns/-/icns-0.0.6.tgz#43550bfda5e4a03e1a4d967b0752320394ee3a0a"
+  integrity sha512-UDZNfnkBbdIBGDRN2WQYyp4MmICpeKLhhNS4aFVODYtzV2KAYQfv0uVjS983Tok59o/mxdIwBskj67gz0cD9iQ==
+  dependencies:
+    "@fiahfy/packbits" "^0.0.5"
+    pngjs "^3.4.0"
+
+"@fiahfy/packbits@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@fiahfy/packbits/-/packbits-0.0.5.tgz#6244ad80c728d79e78a6e7ed8130a5b2c994f0db"
+  integrity sha512-wusKxQnGWo+T/UpJD7oSag5zYhQQmOk9ekEV7EwLb8sYcXTcFFOsLN/nqx5VNnMGUfO6/JAqnY9vbmExxSBtkw==
+
 "@iarna/toml@^2.2.0":
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
@@ -1337,6 +1350,14 @@ buffer@^4.3.0:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
     isarray "^1.0.0"
+
+buffer@^5.6.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.6.0.tgz#a31749dc7d81d84db08abf937b6b8c4033f62786"
+  integrity sha512-/gDYp/UtU0eA1ys8bOs9J6a+E/KWIY+DZ+Q2WESNUA0jFRsJOc0SNUO6xJ5SGA1xueg3NL65W6s+NY5l9cunuw==
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
 
 builtin-status-codes@^3.0.0:
   version "3.0.0"
@@ -3792,6 +3813,11 @@ pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
   integrity sha512-2qHaIQr2VLRFoxe2nASzsV6ef4yOOH+Fi9FBOVH6cqeSgUnoyySPZkxzLuzd+RYOQTRpROA0ztTMqxROKSb/nA==
+
+pngjs@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.4.0.tgz#99ca7d725965fb655814eaf65f38f12bbdbf555f"
+  integrity sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==
 
 posix-character-classes@^0.1.0:
   version "0.1.1"

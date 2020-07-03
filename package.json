@@ -10,6 +10,8 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
+    "@fiahfy/icns": "^0.0.6",
+    "buffer": "^5.6.0",
     "file-saver": "^2.0.2",
     "jszip": "^3.5.0"
   }

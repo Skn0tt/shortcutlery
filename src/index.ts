@@ -68,11 +68,12 @@ createAppButton.onclick = async () => {
   }
 
   const name = nameInput.value;
+  const icon: File | undefined = iconUploadInput.files[0];
   const type = getSelectedAction();
   const action = actionInput.value;
   const command = type === "shell" ? action : `open "${action}"`;
 
-  const blob = await createApp(command, name);
+  const blob = await createApp(command, name, icon);
   saveAs(blob, name + ".zip");
 
   notification1.classList.remove("move-right");

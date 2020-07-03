@@ -2,6 +2,7 @@ import JSZip from "jszip";
 import ApplicationStubURL from "./template/Contents/MacOS/ApplicationStub.file";
 import DocumentWflowURL from "./template/Contents/document.wflow";
 import InfoPlistURL from "./template/Contents/Info.plist";
+import { createAppIcon } from "./Icns";
 
 function slugify(name: string) {
   return "slug";
@@ -29,7 +30,7 @@ async function getDocumentWflow(command: string) {
   return template.replace("__PUT_COMMAND_STRING_HERE__", command);
 }
 
-async function createZip(command: string, appName: string) {
+async function createZip(command: string, appName: string, icon?: File) {
   const zip = new JSZip();
   const App = zip.folder(appName + ".app");
   const Contents = App.folder("Contents");
@@ -38,6 +39,12 @@ async function createZip(command: string, appName: string) {
     getDocumentWflow(command),
     getInfoPlist(appName),
   ]);
+  if (icon) {
+    Contents.file(
+      "Resources/AutomatorApplet.icns",
+      await createAppIcon(icon)
+    );
+  }
   Contents.file("MacOS/Application Stub", ApplicationStub, {
     unixPermissions: "0751",
     binary: true,
@@ -48,8 +55,8 @@ async function createZip(command: string, appName: string) {
   return zip;
 }
 
-export async function createApp(command: string, appName: string) {
-  const zip = await createZip(command, appName);
+export async function createApp(command: string, appName: string, icon?: File) {
+  const zip = await createZip(command, appName, icon);
   const blob = await zip.generateAsync({ platform: "UNIX", type: "blob" });
   return blob;
 }
