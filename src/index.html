@@ -10,18 +10,24 @@
   <!-- Matomo -->
   <script type="text/javascript">
     var _paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-    _paq.push(['disableCookies']);
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function () {
-      var u = "//matomo.simonknott.de/";
-      _paq.push(['setTrackerUrl', u + 'matomo.php']);
-      _paq.push(['setSiteId', '3']);
-      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-      g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
-    })();
+    
+    const matomoUrl = "https://matomo.simonknott.de/";
+    _paq.push(
+      ["setDocumentTitle", document.domain + "/" + document.title],
+      ['disableCookies'],
+      ['trackPageView'],
+      ['enableLinkTracking'],
+      ['setTrackerUrl', matomoUrl + 'matomo.php'],
+      ['setSiteId', '3']
+    );
+
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.async = true;
+    script.src = matomoUrl + "matomo.js";
+
+    const thisScript = document.getElementsByTagName("script")[0];
+    document.head.insertBefore(script, thisScript);
   </script>
   <!-- End Matomo Code -->
 </head>

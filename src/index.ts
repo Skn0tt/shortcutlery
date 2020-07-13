@@ -2,6 +2,7 @@ import { saveAs } from "file-saver";
 import { createApp } from "./AppBuilder";
 import CommandSvg from "./command.svg";
 import LinkSvg from "./link_icon.svg";
+import { trackEvent } from "./tracking";
 
 const actionSelect = document.getElementById(
   "action_select"
@@ -79,8 +80,7 @@ createAppButton.onclick = async () => {
     return;
   }
 
-  const tracker = (window as any).Matomo.getTracker();
-  tracker.trackEvent("shortcutlery", "download");
+  trackEvent("shortcutlery", "download");
 
   const name = nameInput.value;
   const icon: File | undefined = iconUploadInput.files[0];
