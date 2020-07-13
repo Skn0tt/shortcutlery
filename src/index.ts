@@ -66,6 +66,9 @@ createAppButton.onclick = async () => {
   if (createAppButton.disabled) {
     return;
   }
+  
+  const tracker = (window as any).Matomo.getTracker();
+  tracker.trackEvent("shortcutlery", "download");
 
   const name = nameInput.value;
   const icon: File | undefined = iconUploadInput.files[0];
