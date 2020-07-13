@@ -1,7 +1,7 @@
 import { saveAs } from "file-saver";
 import { createApp } from "./AppBuilder";
-import CommandSvg from "./command.svg";
-import LinkSvg from "./link_icon.svg";
+import CommandSvg from "./assets/command.svg";
+import LinkSvg from "./assets/link_icon.svg";
 import { trackEvent } from "./tracking";
 
 const actionSelect = document.getElementById(
